@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProvider";
+import { AuthContext } from "../Providers/AuthProvider"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -47,7 +47,7 @@ const Register = () => {
 
   return (
     <div className="">
-      <div className="bg-base-200">
+      <div className="">
         <div className="flex flex-col items-center justify-center space-y-10">
           <div className="mt-10">
             <h1 className="text-5xl font-bold">Register now!</h1>
