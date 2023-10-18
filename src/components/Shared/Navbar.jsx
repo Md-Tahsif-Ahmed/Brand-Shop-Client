@@ -49,7 +49,7 @@ const Navbar = () => {
                </ul>
                </div>
         <div className="a">
-               <h4 className="italic font-semibold">Entertainment and Media Times</h4>
+               <h4 className="italic font-semibold ">Entertainment and Media Times</h4>
                <img className="w-12 h-12" src={logo} alt="" />
                
         </div>
