@@ -1,7 +1,7 @@
  const FAQ = () => {
     return (
         <div className="max-w-7xl mx-auto">
-            <h1 className="text-5xl text-center font-bold my-10">Frequently Asked Questions</h1>
+            <h1 className="text-xl md:text-5xl text-center font-bold my-10">Frequently Asked Questions</h1>
             <div className="collapse collapse-plus bg-gray-800">
                     <input type="radio" name="my-accordion-3" checked="checked" /> 
                     <div className="collapse-title text-xl font-medium text-white">
