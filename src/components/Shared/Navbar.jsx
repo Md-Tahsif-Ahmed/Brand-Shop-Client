@@ -1,7 +1,22 @@
 import { NavLink } from "react-router-dom";
 import { BsCart } from 'react-icons/bs';
 import logo from '../../assets/logo.png'
+import { AuthContext } from "../Providers/AuthProvider";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut =()=>{
+        logOut()
+        .then(()=>{
+            toast("Logout Successfully");
+        })
+        .catch(()=>{
+            toast("Logout Error");
+        })
+    }
    const Navlinks = <>
            <NavLink to='/' style={({ isActive }) => {
                return {
@@ -25,13 +40,13 @@ const Navbar = () => {
                };
                }}>
            My Cart</NavLink>
-           <NavLink to='/login' style={({ isActive }) => {
+           <NavLink to='/register' style={({ isActive }) => {
                return {
                textDecoration: isActive ? "underline" : "",
                color: isActive ? "purple" : "",
                };
                }}>
-           Login</NavLink>
+           SignUp</NavLink>
            
         </>
     
@@ -61,10 +76,19 @@ const Navbar = () => {
            </div>
            <div className="navbar-end gap-4">
                <a href=""><BsCart size={30}/></a>
-               <a className="bg-green-700 py-1 px-3 rounded-xl text-white">Signup</a>
+               
+               {
+                    user? <>
+                    <img className='w-8 h-8 rounded-full' src={user.photoURL} alt={user.displayName} />
+                    <span>{user.displayName}</span>
+                    <a  onClick={handleLogOut} className="bg-green-700 py-1 px-3 rounded-xl text-white">SignOut</a>
+                    </>:
+                    <Link to='/login' className="bg-green-700 py-1 px-3 rounded-xl text-white">SignIn</Link>
+                }
+                 
            </div>
            </div>
-           
+           <ToastContainer></ToastContainer>
        </div>
    );
 };
