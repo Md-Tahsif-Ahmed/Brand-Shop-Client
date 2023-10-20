@@ -25,7 +25,7 @@ const AddProduct = () => {
     console.log(newProduct);
 
     // Send data to the server
-    fetch('http://localhost:7000/product', {
+    fetch('http://localhost:7000/products', {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
