@@ -12,19 +12,19 @@ const imageStyle = {
 };
 const hrStyle = {
     height: "4px",  
-    backgroundColor: "red",  
+    backgroundColor: "black",  
     width: "10%",  
-    margin: "0 auto",  
+    margin: "",  
     borderRadius: "20px",
 };
 
 const Trend = () => {
   return (
     <div>
-         <h2 className="mt-10 text-black font-semibold italic">What's Trending</h2>
-      <div className="">
-       
+      <div className="flex items-center justify-start mt-10 space-x-2">
+        <h2 className=" text-black font-semibold italic text-2xl">What's Trending</h2>
         <hr style={hrStyle} />
+        
      </div>
       <div className="grid grid-cols-6 gap-0">
         <img src={a} alt="Image 1" style={imageStyle} />
