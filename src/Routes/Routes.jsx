@@ -7,6 +7,7 @@ import Register from "../components/Register/Register";
 import AddProduct from "../components/Product/AddProduct";
 import ShowProduct from "../components/Product/ShowProduct";
 import UpdateProduct from "../components/Product/UpdateProduct";
+import EachDetails from "../components/Product/EachDetails";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path: '/show',  
         element: <ShowProduct />,
         loader: () => fetch('http://localhost:7000/products/'),
+      },
+      {
+        path: '/details/:id', 
+        element: <EachDetails/>,
+        loader: ()=> fetch('http://localhost:7000/products/'),
       },
       {
         path: '/update/:id', 

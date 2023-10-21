@@ -1,22 +1,27 @@
+import { useLoaderData, useParams } from "react-router-dom";
 import { FaDollarSign } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-
-const ProductDetails = ({product}) => {
-    const { _id, name, brand, image, rating, price, type} = product;
+const EachDetails = () => {
+    const { id } = useParams();
+    const products = useLoaderData();
+    console.log('here:',products);
+    const product = products.find((p) => p._id === id);
+    const { _id, name, brand, type, price, rating, image, des} = product;
+    
     return (
         <div>
-            <div className="card w-96 glass">
+            <div className="card w-1/2 glass">
             <div className="brand-card w-fit">
                 <img
                     src={image}
                     alt={name}
-                    style={{ width: "400px", height: "250px" }}
+                    style={{ width: "800px", height: "250px" }}
                 />
                 <div className="brand-title text-center mt-0 italic font-bold text-lg text-white bg-gray-800">
                     <h3>{name}</h3>
                 </div>
             </div>
                 <div className="card-body">
+                    <p className="text-center">{des}</p>
                     <div className="flex items-center justify-between">
                     <h2 className="card-title">{brand}</h2>
                     <h2 className="card-title bg-pink-600 rounded-full font-semibold">{type}</h2>
@@ -35,21 +40,14 @@ const ProductDetails = ({product}) => {
                         </div>
                         <span className='flex items-center space-x-2'>Price:<FaDollarSign/>{price}</span>
                     </p>
-                    <div className="card-actions justify-end">
-                    
-                    <Link to={`/details/${_id}`}>
-                            <button className="btn btn-primary">Details</button>
-                    </Link>
-                    <Link to={`/update/${_id}`}>
-                            <button className="btn btn-primary">Update</button>
-                    </Link>
+                     
 
                     </div>
                 </div>
             </div>
            
-        </div>
+       
     );
 };
 
-export default ProductDetails;
+export default EachDetails;
