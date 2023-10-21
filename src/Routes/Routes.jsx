@@ -6,37 +6,43 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import AddProduct from "../components/Product/AddProduct";
 import ShowProduct from "../components/Product/ShowProduct";
-  
-const router = createBrowserRouter([
-    {
-      path: "/",
-      element:  <App></App>,
-      errorElement: <ErrorPage></ErrorPage>,
-      children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-            path: '/login',
-            element: <Login></Login>
-        },
-        {
-            path: '/register',
-            element: <Register></Register>
-        },
-        {
-          path: '/addproduct',
-          element: <AddProduct></AddProduct>,
-        },
-        {
-          path: '/show',
-          element: <ShowProduct></ShowProduct>,
-          loader: () => fetch('http://localhost:7000/products/'),
-        }
+import UpdateProduct from "../components/Product/UpdateProduct";
 
-      ]
-    },
-  ]);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/register',
+        element: <Register />,
+      },
+      {
+        path: '/addproduct',  
+        element: <AddProduct />,
+      },
+      {
+        path: '/show',  
+        element: <ShowProduct />,
+        loader: () => fetch('http://localhost:7000/products/'),
+      },
+      {
+        path: '/update/:id', 
+        element: <UpdateProduct />,
+        // loader: ({params}) => fetch(`http://localhost:7000/products/${params.id}`),
+        loader: ()=> fetch('http://localhost:7000/products/'),
+      },
+    ],
+  },
+]);
 
 export default router;
