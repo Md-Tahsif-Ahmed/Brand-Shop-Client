@@ -1,11 +1,14 @@
-import { useLoaderData } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
 import Sliders from "./Sliders";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const ShowProduct = () => {
     // const [products, setProducts] = useState([]);
+    const { title } = useParams();
     const products = useLoaderData();
-    console.log(products)
+    console.log('lolo:',products);
+    const filter = products.filter((p) => p.brand === title);
+    console.log('kolo:',filter);
 
     
     return (
@@ -17,8 +20,9 @@ const ShowProduct = () => {
             <div className="grid grid-cols-1 px-4 my-10 md:px-0 md:grid-cols-2 lg:grid-cols-4">
             
                 {
-                    products.map((product)=><ProductDetails key={product._id} product={product}></ProductDetails>)
+                    filter.map((product)=><ProductDetails key={product._id} product={product}></ProductDetails>)
                 }
+                 
            </div>
         </div>
     );

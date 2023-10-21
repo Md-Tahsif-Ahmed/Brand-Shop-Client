@@ -71,7 +71,7 @@ const UpdateProduct = () => {
     return (
         <div>
             <div className="flex flex-col items-center justify-center space-y-10 mt-10">
-        <h1 className="text-5xl font-bold">Update Product:{name}</h1>
+        <h1 className="text-5xl font-bold">Update {name}</h1>
         <div className="w-1/2 bg-orange-400 p-4">
           <form onSubmit={handleUpdateProduct} className="card-body">
             <div className="md:flex space-x-4">

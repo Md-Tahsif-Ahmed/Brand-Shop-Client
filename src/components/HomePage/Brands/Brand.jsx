@@ -5,7 +5,7 @@ const Brand = ({ brand }) => {
   const { image, title } = brand;
   return (
        <div className="">
-          <Link to='/'>
+          <Link to={`/show/${title}`}>
               <div className="brand-card w-fit">
                   <img
                     src={image}

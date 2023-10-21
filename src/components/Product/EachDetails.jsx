@@ -8,7 +8,7 @@ const EachDetails = () => {
     const { _id, name, brand, type, price, rating, image, des} = product;
     
     return (
-        <div>
+        <div className="flex items-center justify-center mt-10">
             <div className="card w-1/2 glass">
             <div className="brand-card w-fit">
                 <img
@@ -39,9 +39,10 @@ const EachDetails = () => {
                             <span>{rating}</span> 
                         </div>
                         <span className='flex items-center space-x-2'>Price:<FaDollarSign/>{price}</span>
+                        
                     </p>
                      
-
+                    <button className="btn btn-primary w-full mt-6">Add to Cart</button>
                     </div>
                 </div>
             </div>

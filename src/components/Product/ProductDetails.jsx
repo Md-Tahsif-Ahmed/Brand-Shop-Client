@@ -18,8 +18,8 @@ const ProductDetails = ({product}) => {
             </div>
                 <div className="card-body">
                     <div className="flex items-center justify-between">
-                    <h2 className="card-title">{brand}</h2>
-                    <h2 className="card-title bg-pink-600 rounded-full font-semibold">{type}</h2>
+                    <h2 className="card-title bg-pink-600 rounded-full font-semibold px-2">{brand}</h2>
+                    <h2 className="card-title bg-pink-600 rounded-full font-semibold px-2">{type}</h2>
                     </div>
 
                     <p className='flex items-center justify-between'>
