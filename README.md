@@ -1,8 +1,11 @@
-# React + Vite
+# Brand Shop 
+<h1>The key Feature of this Project:</h1>
+<or>
+  <li>This is Entermainemnt and Media base Website  where anybody can enjoy entertainment by choicing any brand</li>
+  <li>This website is authenticated based site that work with firebase</li>
+  <li>In this website have many feature that user can cont use without create and login account</li>
+  <li>Login User can see deatils information like Movie, Sports, Web seriese, Certoon etc.</li>
+  <li>User can add any choice brand product in My Cart Page </li>
+</or>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ 
