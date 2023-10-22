@@ -10,6 +10,7 @@ import UpdateProduct from "../components/Product/UpdateProduct";
 import EachDetails from "../components/Product/EachDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import MyCart from "../components/Cart/MyCart";
+import DeleteProduct from "../components/Cart/DeleteProduct";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
         path: '/mycart',
         element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
        
+      },
+      {
+        path: '/delete',
+        element: <DeleteProduct></DeleteProduct>
       }
     ],
   },

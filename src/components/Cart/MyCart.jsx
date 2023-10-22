@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
  
 
 const MyCart = () => {
@@ -13,6 +14,23 @@ const MyCart = () => {
       .then((data) => setCartData(data))
       .catch((error) => console.error(error));
   }, []);
+
+  const handleDelete = _id =>{ 
+    fetch(`http://localhost:7000/mycart/${_id}`,{
+        method: 'DELETE',
+    })
+    .then(res => res.json())
+    .then(data=>{
+        if(data.deleteCount > 0){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Product Successfully Deleted',
+                icon: 'success',
+                confirmButtonText: 'done'
+              })
+        }
+    })
+  }
 
   return (
     <div>
@@ -39,7 +57,7 @@ const MyCart = () => {
                 <td>{data.type}</td>
                 <td>{data.price}</td>
                 <td>
-                  <Link to='/delete'><button className="btn bg-red-600 rounded-lg ">Delete</button></Link>
+                  <Link to='/delete'><button onClick={()=>handleDelete(data._id)} className="btn bg-red-600 rounded-lg ">Delete</button></Link>
                 </td>
               </tr>
             ))}
