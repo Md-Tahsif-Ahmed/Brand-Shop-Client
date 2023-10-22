@@ -1,11 +1,53 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaDollarSign } from 'react-icons/fa';
+import { AuthContext } from "../Providers/AuthProvider";
+import { useContext } from "react";
+import Swal from 'sweetalert2';
 const EachDetails = () => {
+    const { user } = useContext(AuthContext);
     const { id } = useParams();
     const products = useLoaderData();
-    console.log('here:',products);
     const product = products.find((p) => p._id === id);
     const { _id, name, brand, type, price, rating, image, des} = product;
+
+    const handleCart = ()=> {
+        product.email = user.email;
+        console.log('all are in', product);
+        // send data to the server
+        fetch(`http://localhost:7000/mycart/${product.email}`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product),
+            
+        })
+        .then((res) => {
+            if (!res.ok) {
+            throw new Error(`Server responded with status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then((data) => {
+            console.log(data);
+            // Handle the response from the server as needed
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Product Successfully Added',
+                    icon: 'success',
+                    confirmButtonText: 'done'
+                  })
+            }
+        })
+        .catch((error) => {
+            console.error('Fetch error:', error.message);
+        });
+
+        
+
+
+    }
     
     return (
         <div className="flex items-center justify-center mt-10">
@@ -23,8 +65,8 @@ const EachDetails = () => {
                 <div className="card-body">
                     <p className="text-center">{des}</p>
                     <div className="flex items-center justify-between">
-                    <h2 className="card-title">{brand}</h2>
-                    <h2 className="card-title bg-pink-600 rounded-full font-semibold">{type}</h2>
+                    <h2 className="card-title bg-pink-600 rounded-full font-semibold px-2">{brand}</h2>
+                    <h2 className="card-title bg-pink-600 rounded-full font-semibold px-2">{type}</h2>
                     </div>
 
                     <p className='flex items-center justify-between'>
@@ -42,7 +84,7 @@ const EachDetails = () => {
                         
                     </p>
                      
-                    <button className="btn btn-primary w-full mt-6">Add to Cart</button>
+                    <button onClick={()=>handleCart(product)} className="btn btn-primary w-full mt-6">Add to Cart</button>
                     </div>
                 </div>
             </div>

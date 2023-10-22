@@ -51,7 +51,7 @@ const UpdateProduct = () => {
             .then((data) => {
                 console.log(data);
                 // Handle the response from the server as needed
-                if(data.insertedId){
+                if(data.modifiedCount > 0){
                     Swal.fire({
                         title: 'Success!',
                         text: 'Product Successfully Updated',

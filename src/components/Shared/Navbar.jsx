@@ -75,7 +75,7 @@ const Navbar = () => {
                </ul>
            </div>
            <div className="navbar-end gap-4">
-               <a href=""><BsCart size={30}/></a>
+                <Link to='/mycart'><BsCart size={30}/></Link>
                
                {
                     user? <>
