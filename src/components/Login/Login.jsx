@@ -43,7 +43,7 @@ const Login = () => {
             <div className="mt-10">
               <h1 className="text-5xl font-bold">Login now!</h1>
             </div>
-            <div className="w-1/2  bg-orange-400	p-4">
+            <div className="w-1/2  bg-[#32cc8c]	p-4 rounded-lg">
               <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">
                   <label className="label">
@@ -75,11 +75,11 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-secondary">Login</button>
+                  <button className="btn bg-[#146542] hover:bg-green-600 border-0 w-1/2 mx-auto text-white" >Login</button>
                 </div>
               </form>
-              <p className="text-center ">New Here?  Please <Link to='/register'><button className="btn btn-link">Register</button></Link></p>
-              <p className="text-center"> <button onClick={handleGoogle} className="btn btn-ghost"> Sign In with Google</button></p>
+              <p className="text-center ">New Here?  Please <Link to='/register'><button className="btn btn-link text-[#146542]">Register</button></Link></p>
+              <p className="text-center"> <button onClick={handleGoogle} className="btn btn-ghost text-sm normal-case md:text-base"> Sign In with Google</button></p>
             </div>
           </div>
         </div>

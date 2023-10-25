@@ -1,6 +1,8 @@
+import EmpyProduct from "./EmpyProduct";
 import ProductDetails from "./ProductDetails";
 import Sliders from "./Sliders";
 import { useLoaderData, useParams } from "react-router-dom";
+
 
 const ShowProduct = () => {
     // const [products, setProducts] = useState([]);
@@ -9,6 +11,13 @@ const ShowProduct = () => {
     console.log('lolo:',products);
     const filter = products.filter((p) => p.brand === title);
     console.log('kolo:',filter);
+    if (filter.length === 0) {
+        return (
+            <div>
+                 <EmpyProduct></EmpyProduct>
+            </div>
+        );
+    }
 
     
     return (

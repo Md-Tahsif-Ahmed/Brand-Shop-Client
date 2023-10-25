@@ -50,9 +50,9 @@ const Register = () => {
       <div className="">
         <div className="flex flex-col items-center justify-center space-y-10">
           <div className="mt-10">
-            <h1 className="text-5xl font-bold">Register now!</h1>
+            <h1 className="text-2xl md:text-5xl font-bold">Register now!</h1>
           </div>
-          <div className="w-1/2 bg-orange-400	p-4">
+          <div className="w-1/2 bg-[#32cc8c] p-4 rounded-lg">
             <form onSubmit={handleRegister} className="card-body">
                 <div className="form-control">
                     <label className="label">
@@ -106,13 +106,13 @@ const Register = () => {
                     </label>
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-secondary">Register</button>
+                    <button className="btn bg-[#146542] hover:bg-green-600 border-0  md:w-1/2 mx-auto text-white">Register</button>
                 </div>
             </form>
-            <p className="text-center">
+            <p className="text-center text-xs md:text-base">
               Already have an Account? Please{" "}
               <Link to="/login">
-                <button className="btn btn-link">Login</button>
+                <button className="btn btn-link text-[#146542]">Login</button>
               </Link>
             </p>
           </div>

@@ -51,7 +51,7 @@ const EachDetails = () => {
     
     return (
         <div className="flex items-center justify-center mt-10">
-            <div className="card w-1/2 glass">
+            <div className="card md:w-1/2 glass">
             <div className="brand-card w-fit">
                 <img
                     src={image}
@@ -65,8 +65,8 @@ const EachDetails = () => {
                 <div className="card-body">
                     <p className="text-center">{des}</p>
                     <div className="flex items-center justify-between">
-                    <h2 className="card-title bg-pink-600 rounded-full font-semibold px-2">{brand}</h2>
-                    <h2 className="card-title bg-pink-600 rounded-full font-semibold px-2">{type}</h2>
+                    <h2 className="card-title bg-[#07301e] text-white rounded-full font-semibold px-2">{brand}</h2>
+                    <h2 className="card-title bg-[#07301e] text-white rounded-full font-semibold px-2">{type}</h2>
                     </div>
 
                     <p className='flex items-center justify-between'>
@@ -84,7 +84,7 @@ const EachDetails = () => {
                         
                     </p>
                      
-                    <button onClick={()=>handleCart(product)} className="btn btn-primary w-full mt-6">Add to Cart</button>
+                    <button onClick={()=>handleCart(product)} className="btn bg-[#146542] hover:bg-green-600 border-0 text-white w-full mt-6">Add to Cart</button>
                     </div>
                 </div>
             </div>

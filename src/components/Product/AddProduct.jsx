@@ -60,10 +60,10 @@ const AddProduct = () => {
   return (
     <div>
       <div className="flex flex-col items-center justify-center space-y-10 mt-10">
-        <h1 className="text-5xl font-bold">Add Product</h1>
-        <div className="w-1/2 bg-orange-400 p-4">
+        <h1 className="text-2xl md:text-5xl font-bold">Add Product</h1>
+        <div className="w-1/2 bg-[#32cc8c] p-4 rounded-lg ">
           <form onSubmit={handleAddProduct} className="card-body">
-            <div className="md:flex space-x-4">
+            <div className="block md:flex md:space-x-4">
               <div className="form-control flex-1">
                 <label className="label">
                   <span className="label-text">Product Name</span>
@@ -89,7 +89,7 @@ const AddProduct = () => {
                 />
               </div>
             </div>
-            <div className="md:flex space-x-4">
+            <div className="block md:flex md:space-x-4">
               <div className="form-control flex-1">
                 <label className="label">
                   <span className="label-text">Type Name</span>
@@ -115,7 +115,7 @@ const AddProduct = () => {
                 />
               </div>
             </div>
-            <div className="md:flex space-x-4">
+            <div className="block md:flex md:space-x-4">
               <div className="form-control flex-1">
                 <label className="label">
                   <span className="label-text">Rating</span>
@@ -152,7 +152,7 @@ const AddProduct = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button type="submit" className="btn btn-secondary">
+              <button type="submit" className="btn bg-[#146542] hover:bg-green-600 border-0  md:w-1/2 mx-auto text-white">
                 Submit
               </button>
             </div>

@@ -12,18 +12,21 @@ const Banner = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        // opacity: "75%",
+        // // backgroundColor: "black",
     };
 
     const hrStyle = {
         height: "4px",  
-        backgroundColor: "yellow",  
+        backgroundColor: "green",  
         width: "10%",  
         margin: "0 auto",  
         borderRadius: "20px",
     };
 
     return (
-        <div style={bgStyle} className="mb-16 relative">
+        <div style={bgStyle} className="mb-16 relative ">
+            <div className="bg-black bg-opacity-70 hero-overlay"></div>
             <div className="absolute">
                 <h1 className="text-center font-bold text-xl md:text-2xl lg:text-5xl italic text-white mb-4">
                     See the Greatest Shows

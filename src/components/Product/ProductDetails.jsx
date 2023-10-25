@@ -18,8 +18,8 @@ const ProductDetails = ({product}) => {
             </div>
                 <div className="card-body">
                     <div className="flex items-center justify-between">
-                    <h2 className="card-title bg-pink-600 rounded-full font-semibold px-2">{brand}</h2>
-                    <h2 className="card-title bg-pink-600 rounded-full font-semibold px-2">{type}</h2>
+                    <h2 className="card-title bg-[#07301e] text-white rounded-full font-semibold px-2">{brand}</h2>
+                    <h2 className="card-title bg-[#07301e] text-white rounded-full font-semibold px-2">{type}</h2>
                     </div>
 
                     <p className='flex items-center justify-between'>
@@ -38,10 +38,10 @@ const ProductDetails = ({product}) => {
                     <div className="card-actions justify-end">
                     
                     <Link to={`/details/${_id}`}>
-                            <button className="btn btn-primary">Details</button>
+                            <button className="btn bg-[#146542] hover:bg-green-600 border-0 text-white">Details</button>
                     </Link>
                     <Link to={`/update/${_id}`}>
-                            <button className="btn btn-primary">Update</button>
+                            <button className="btn bg-[#146542] hover:bg-green-600 border-0 text-white">Update</button>
                     </Link>
 
                     </div>
