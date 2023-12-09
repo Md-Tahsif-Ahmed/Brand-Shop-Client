@@ -7,7 +7,7 @@ const MyCart = () => {
   const [cartData, setCartData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:7000/mycart/${user.email}`)
+    fetch(`https://brand-shop-new-server-n07wv1tuz-tahsif1010s-projects.vercel.app/mycart/${user.email}`)
       .then((res) => res.json())
       .then((data) => setCartData(data))
       .catch((error) => console.error(error));
@@ -25,7 +25,7 @@ const MyCart = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:7000/mycart/${_id}`, {
+        fetch(`https://brand-shop-new-server-n07wv1tuz-tahsif1010s-projects.vercel.app/mycart/${_id}`, {
           method: 'DELETE'
         })
           .then((res) => res.json())

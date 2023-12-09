@@ -37,18 +37,18 @@ const router = createBrowserRouter([
       {
         path: '/show/:title',  
         element: <ShowProduct />,
-        loader: () => fetch('http://localhost:7000/products/'),
+        loader: () => fetch('https://brand-shop-new-server-n07wv1tuz-tahsif1010s-projects.vercel.app/products/'),
       },
       {
         path: '/details/:id', 
         element: <PrivateRoutes><EachDetails/></PrivateRoutes>,
-        loader: ()=> fetch('http://localhost:7000/products/'),
+        loader: ()=> fetch('https://brand-shop-new-server-n07wv1tuz-tahsif1010s-projects.vercel.app/products/'),
       },
       {
         path: '/update/:id', 
         element: <PrivateRoutes><UpdateProduct /></PrivateRoutes>,
-        // loader: ({params}) => fetch(`http://localhost:7000/products/${params.id}`),
-        loader: ()=> fetch('http://localhost:7000/products/'),
+        // loader: ({params}) => fetch(`https://brand-shop-new-server-n07wv1tuz-tahsif1010s-projects.vercel.app/products/${params.id}`),
+        loader: ()=> fetch('https://brand-shop-new-server-n07wv1tuz-tahsif1010s-projects.vercel.app/products/'),
       },
       {
         path: '/mycart',

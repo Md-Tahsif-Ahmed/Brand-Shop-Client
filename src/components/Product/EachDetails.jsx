@@ -14,7 +14,7 @@ const EachDetails = () => {
         product.email = user.email;
         console.log('all are in', product);
         // send data to the server
-        fetch(`http://localhost:7000/mycart/${product.email}`, {
+        fetch(`https://brand-shop-new-server-n07wv1tuz-tahsif1010s-projects.vercel.app/mycart/${product.email}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
